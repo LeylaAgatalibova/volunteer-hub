@@ -7,14 +7,13 @@ import SkillTagInput from '../../components/admin/SkillTagInput'
 import toast from 'react-hot-toast'
 
 const FACULTIES = [
-  'Engineering', 'Science', 'Business', 'Arts',
-  'Law', 'Medicine', 'Education', 'Architecture', 'Other',
+  'Nəqliyyat və Sənaye Texnologiyaları', 'Qida mühəndisliyi', 'Avtomatika, telekommunikasiya və informatika', 'İqtisadiyyat və idarəetmə',
+  'Turizm',
 ]
 
 const ROLES = [
-  'Event Coordinator', 'Workshop Facilitator', 'Mentor',
-  'Marketing Lead', 'Design Lead', 'Tech Lead',
-  'Research Assistant', 'Community Manager', 'Other',
+  'Developer', 'Dizayner', 'Layihə İdarəetməsi',
+  'Tələbələrlə iş', 'Təlim', 'Other',
 ]
 
 const EMPTY_FORM = {
@@ -210,17 +209,30 @@ export default function VolunteerForm() {
             </div>
           </div>
 
-          <div>
-            <label className="label">Role <span className="text-ink-300 normal-case tracking-normal font-body font-400">(optional)</span></label>
-            <select
-              value={form.role}
-              onChange={(e) => handleChange('role', e.target.value)}
-              className="input appearance-none"
-            >
-              <option value="">No specific role</option>
-              {ROLES.map((r) => <option key={r} value={r}>{r}</option>)}
-            </select>
-          </div>
+         <div>
+  <label className="label">Role <span className="text-ink-300 normal-case tracking-normal font-body font-400">(optional)</span></label>
+  <div className="flex flex-col gap-2">
+    <select
+      value={ROLES.includes(form.role) ? form.role : form.role ? 'custom' : ''}
+      onChange={(e) => {
+        if (e.target.value === 'custom') return
+        handleChange('role', e.target.value)
+      }}
+      className="input appearance-none"
+    >
+      <option value="">Rol seçin…</option>
+      {ROLES.map((r) => <option key={r} value={r}>{r}</option>)}
+      <option value="custom">✏️ Yaz…</option>
+    </select>
+    <input
+      type="text"
+      value={form.role}
+      onChange={(e) => handleChange('role', e.target.value)}
+      className="input"
+      placeholder="Rol adını yazın və ya yuxarıdan seçin…"
+    />
+  </div>
+</div>
 
           <div>
             <label className="label">Bio <span className="text-ink-300 normal-case tracking-normal font-body font-400">(optional)</span></label>

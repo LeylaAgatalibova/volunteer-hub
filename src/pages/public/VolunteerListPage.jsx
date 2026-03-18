@@ -23,9 +23,7 @@ export default function VolunteerListPage() {
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10">
       {/* Hero */}
       <div className="mb-10 animate-fade-up">
-        <p className="text-xs font-mono font-500 text-ember-500 uppercase tracking-widest mb-3">
-          University Innovation Center
-        </p>
+       
         <h1 className="font-display font-800 text-4xl sm:text-5xl text-ink-800 leading-tight mb-3">
           Student Volunteers
         </h1>
