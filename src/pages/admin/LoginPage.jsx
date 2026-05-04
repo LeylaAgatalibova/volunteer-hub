@@ -51,7 +51,7 @@ export default function LoginPage() {
           </div>
           <h1 className="font-display font-800 text-2xl text-ink-50 mb-1">Admin Access</h1>
           <p className="text-sm text-ink-400 font-body">Innovation Center · VolunteerHub</p>
-          <p className="text-sm text-ink-400 font-body">Mail və parol prototip üçün aşağıda qeyd olunub</p>
+          <p className="text-sm text-ink-400 font-body">Mail və parol prototip üçün aşağıda qeyd olunub.</p>
           <p className="text-sm text-white font-body">mail: leylatalibova44@gmail.com</p>
           <p className="text-sm text-white font-body">parol: 123123123</p>
         </div>
